@@ -1,5 +1,7 @@
 'use strict';
 
+$('h1').hide();
+
 $(function() {
     $('#js-shopping-list-form').submit(function(event) {
         event.preventDefault();
@@ -22,7 +24,7 @@ $(function() {
 
     })
 
-    $('h1').hide();
+   
 
 
 
