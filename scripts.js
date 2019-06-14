@@ -43,7 +43,7 @@ $(function() {
 
 
   $(document).on('click', 'button.shopping-item-toggle', function(event){
-      $(this).closest('span').toggleClass('shopping-item__checked')
+      $(this).parent().prev('span').toggleClass('shopping-item__checked');
 
 
   })
@@ -51,4 +51,5 @@ $(function() {
 
 
 });
+
 
