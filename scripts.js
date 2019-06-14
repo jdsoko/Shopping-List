@@ -1,12 +1,15 @@
 'use strict';
 
-$('h1').hide();
 
 $(function() {
     $('#js-shopping-list-form').submit(function(event) {
+        
         event.preventDefault();
         
-        const listItem = $(this).find('input [name="shopping-list-entry"]');
+        
+        
+        const listItem = $(this).find('input').val();
+
         
         $('ul').append(
            `<li>
@@ -22,15 +25,30 @@ $(function() {
          </li>` 
         )
 
+        $('#js-shopping-list-form').trigger('reset');
+
+
+    
+
+
     })
 
+
+
+   $(document).on('click', 'button.shopping-item-delete', function(event){
+      $(this).closest('li').remove();
    
+  
+  })
 
 
+  $(document).on('click', 'button.shopping-item-toggle', function(event){
+      $(this).closest('span').toggleClass('shopping-item__checked')
 
 
-
+  })
 
 
 
 });
+
